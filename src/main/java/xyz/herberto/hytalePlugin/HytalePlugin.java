@@ -4,10 +4,9 @@ package xyz.herberto.hytalePlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import lombok.Getter;
+import xyz.herberto.hytalePlugin.commands.BalanceCommand;
 import xyz.herberto.hytalePlugin.commands.economy.EconomyCommands;
-import xyz.herberto.hytalePlugin.commands.TestCommand;
 import xyz.herberto.hytalePlugin.profiles.ProfileHandler;
-import xyz.herberto.hytalePlugin.profiles.ProfileListener;
 
 import javax.annotation.Nonnull;
 
@@ -26,10 +25,10 @@ public final class HytalePlugin extends JavaPlugin {
 
         profileHandler = new ProfileHandler(getDataDirectory().toFile());
 
-        System.out.println("HytalePlugin loaded");
+        getLogger().atInfo().log("Hytale Plugin has been enabled!");
 
-        getCommandRegistry().registerCommand(new TestCommand("test", "A test command"));
         getCommandRegistry().registerCommand(new EconomyCommands());
+        getCommandRegistry().registerCommand(new BalanceCommand());
 
 
     }

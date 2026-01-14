@@ -10,6 +10,7 @@ public class EconomyCommands extends AbstractCommandCollection {
 
     public EconomyCommands() {
         super("economy", "Player economy commands");
+        addAliases("eco");
         addSubCommand(new EcoSetSubCommand());
         addSubCommand(new EcoGiveSubCommand());
         addSubCommand(new EcoResetSubCommand());
