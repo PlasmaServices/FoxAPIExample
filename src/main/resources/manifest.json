@@ -1,0 +1,19 @@
+{
+  "Group": "HytalePlugin",
+  "Name": "HytalePlugin",
+  "Version": "1.0.0",
+  "Description": "A Hytale plugin template",
+  "Authors": [
+    {
+      "Name": "herberto",
+      "Email": "herberto@herberto.xyz",
+      "Url": "https://herberto.xyz"
+    }
+  ],
+  "Website": "https://github.com/yourusername/hytale-plugin-template",
+  "Main": "xyz.herberto.hytalePlugin.HytalePlugin",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false
+}
