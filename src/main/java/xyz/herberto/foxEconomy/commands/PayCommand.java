@@ -1,4 +1,4 @@
-package xyz.herberto.hytalePlugin.commands;
+package xyz.herberto.foxEconomy.commands;
 
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
@@ -6,11 +6,8 @@ import com.hypixel.hytale.server.core.command.system.CommandSender;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractAsyncCommand;
-import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.hypixel.hytale.server.core.util.MessageUtil;
-import xyz.herberto.hytalePlugin.HytalePlugin;
-import xyz.herberto.hytalePlugin.profiles.ProfileHandler;
+import xyz.herberto.foxEconomy.FoxEconomy;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
@@ -40,13 +37,13 @@ public class PayCommand extends AbstractAsyncCommand {
 
         CommandSender player = context.sender();
 
-        if(HytalePlugin.getProfileHandler().getBalance(player.getUuid()) < amount) {
+        if(FoxEconomy.getProfileHandler().getBalance(player.getUuid()) < amount) {
             context.sendMessage(Message.raw("You cannot afford that!"));
             return CompletableFuture.completedFuture(null);
         }
 
-        HytalePlugin.getProfileHandler().removeBalance(player.getUuid(), amount);
-        HytalePlugin.getProfileHandler().addBalance(target.getUuid(), amount);
+        FoxEconomy.getProfileHandler().removeBalance(player.getUuid(), amount);
+        FoxEconomy.getProfileHandler().addBalance(target.getUuid(), amount);
 
 
         player.sendMessage(Message.raw("You have paid " + target.getUsername() + " $" + amount + "."));

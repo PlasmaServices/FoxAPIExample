@@ -1,4 +1,4 @@
-package xyz.herberto.hytalePlugin.profiles;
+package xyz.herberto.foxEconomy.profiles;
 
 
 import org.bspfsystems.yamlconfiguration.file.FileConfiguration;

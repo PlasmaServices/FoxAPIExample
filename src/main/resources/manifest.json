@@ -2,7 +2,7 @@
   "Group": "herberto",
   "Name": "FoxEconomy",
   "Version": "1.0.0",
-  "Description": "A Hytale plugin template",
+  "Description": "An economy plugin for Hytale servers.",
   "Authors": [
     {
       "Name": "herberto",
@@ -10,8 +10,8 @@
       "Url": "https://herberto.xyz"
     }
   ],
-  "Website": "https://github.com/yourusername/hytale-plugin-template",
-  "Main": "xyz.herberto.hytalePlugin.HytalePlugin",
+  "Website": "https://herberto.xyz",
+  "Main": "xyz.herberto.foxEconomy.FoxEconomy",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},

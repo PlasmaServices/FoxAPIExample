@@ -1,10 +1,10 @@
-package xyz.herberto.hytalePlugin.commands.economy;
+package xyz.herberto.foxEconomy.commands.economy;
 
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractCommandCollection;
-import xyz.herberto.hytalePlugin.commands.economy.sub.EcoGiveSubCommand;
-import xyz.herberto.hytalePlugin.commands.economy.sub.EcoRemoveSubCommand;
-import xyz.herberto.hytalePlugin.commands.economy.sub.EcoResetSubCommand;
-import xyz.herberto.hytalePlugin.commands.economy.sub.EcoSetSubCommand;
+import xyz.herberto.foxEconomy.commands.economy.sub.EcoGiveSubCommand;
+import xyz.herberto.foxEconomy.commands.economy.sub.EcoRemoveSubCommand;
+import xyz.herberto.foxEconomy.commands.economy.sub.EcoResetSubCommand;
+import xyz.herberto.foxEconomy.commands.economy.sub.EcoSetSubCommand;
 
 public class EconomyCommands extends AbstractCommandCollection {
 

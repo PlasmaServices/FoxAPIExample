@@ -1,23 +1,23 @@
-package xyz.herberto.hytalePlugin;
+package xyz.herberto.foxEconomy;
 
 
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import lombok.Getter;
-import xyz.herberto.hytalePlugin.commands.BalanceCommand;
-import xyz.herberto.hytalePlugin.commands.PayCommand;
-import xyz.herberto.hytalePlugin.commands.economy.EconomyCommands;
-import xyz.herberto.hytalePlugin.profiles.ProfileHandler;
+import xyz.herberto.foxEconomy.commands.BalanceCommand;
+import xyz.herberto.foxEconomy.commands.PayCommand;
+import xyz.herberto.foxEconomy.commands.economy.EconomyCommands;
+import xyz.herberto.foxEconomy.profiles.ProfileHandler;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 
-public final class HytalePlugin extends JavaPlugin {
+public final class FoxEconomy extends JavaPlugin {
 
-    @Getter private static HytalePlugin instance;
+    @Getter private static FoxEconomy instance;
     @Getter private static ProfileHandler profileHandler;
 
-    public HytalePlugin(@Nonnull JavaPluginInit init) {
+    public FoxEconomy(@Nonnull JavaPluginInit init) {
         super(init);
     }
 
@@ -32,7 +32,8 @@ public final class HytalePlugin extends JavaPlugin {
                 new PayCommand()
         ).forEach(command -> getCommandRegistry().registerCommand(command));
 
-        getLogger().atInfo().log("Hytale Plugin has been enabled!");
+        getLogger().atInfo().log("FoxEconomy loaded - developed by https://herberto.xyz");
+        getLogger().atInfo().log("FoxEconomy has been enabled!");
 
     }
 

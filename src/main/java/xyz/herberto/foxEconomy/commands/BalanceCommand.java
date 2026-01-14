@@ -1,4 +1,4 @@
-package xyz.herberto.hytalePlugin.commands;
+package xyz.herberto.foxEconomy.commands;
 
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
@@ -6,7 +6,7 @@ import com.hypixel.hytale.server.core.command.system.arguments.system.OptionalAr
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractAsyncCommand;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import xyz.herberto.hytalePlugin.HytalePlugin;
+import xyz.herberto.foxEconomy.FoxEconomy;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
@@ -28,13 +28,13 @@ public class BalanceCommand extends AbstractAsyncCommand {
         PlayerRef target = playerArg.get(context);
 
         if (target == null) {
-            double balance = HytalePlugin.getProfileHandler().getBalance(context.sender().getUuid());
+            double balance = FoxEconomy.getProfileHandler().getBalance(context.sender().getUuid());
             context.sendMessage(Message.raw("Your balance is $" + balance));
         } else {
 
             PlayerRef targetPlayer = playerArg.get(context);
-            if (HytalePlugin.getProfileHandler().hasProfile(targetPlayer.getUuid())) {
-                double balance = HytalePlugin.getProfileHandler().getBalance(targetPlayer.getUuid());
+            if (FoxEconomy.getProfileHandler().hasProfile(targetPlayer.getUuid())) {
+                double balance = FoxEconomy.getProfileHandler().getBalance(targetPlayer.getUuid());
                 context.sendMessage(Message.raw(targetPlayer.getUsername() + "'s balance is $" + balance));
             } else {
                 context.sendMessage(Message.translation("server.commands.errors.noSuchPlayer").param("username", targetPlayer.getUsername()));
