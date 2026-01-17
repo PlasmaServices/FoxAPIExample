@@ -86,10 +86,9 @@ public class ProfileHandler {
         }
     }
 
-    public void setDefaultProfile(UUID uuid, String name) {
+    public void setDefaultProfile(UUID uuid) {
         FileConfiguration config = getPlayerConfig(uuid);
-        if(!config.contains("name") || !config.contains("balance")) {
-            config.set("name", name);
+        if(!config.contains("balance")) {
             config.set("balance", 0.00);
             savePlayerConfig(uuid, config);
         }

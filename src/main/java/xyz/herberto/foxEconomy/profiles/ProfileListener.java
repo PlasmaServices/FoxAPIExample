@@ -7,7 +7,7 @@ public class ProfileListener {
 
     public static void register() {
         FoxEconomy.getInstance().getEventRegistry().registerGlobal(PlayerConnectEvent.class, event -> {
-            FoxEconomy.getProfileHandler().setDefaultProfile(event.getPlayerRef().getUuid(), event.getPlayerRef().getUsername());
+            FoxEconomy.getProfileHandler().setDefaultProfile(event.getPlayerRef().getUuid());
         });
     }
 
