@@ -1,4 +1,4 @@
-package xyz.herberto.foxEconomy.commands;
+package xyz.herberto.foxAPIExample.commands;
 
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
@@ -6,18 +6,17 @@ import com.hypixel.hytale.server.core.command.system.arguments.system.OptionalAr
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractAsyncCommand;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import xyz.herberto.foxEconomy.FoxEconomy;
+import xyz.herberto.foxAPIExample.FoxAPIExample;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
 
-public class BalanceCommand extends AbstractAsyncCommand {
+public class CustomBalanceCommand extends AbstractAsyncCommand {
 
     private final OptionalArg<PlayerRef> playerArg;
 
-    public BalanceCommand() {
-        super("balance", "View your or another player's balance");
-        addAliases("bal", "money");
+    public CustomBalanceCommand() {
+        super("custombalance", "View your or another player's balance");
         playerArg = withOptionalArg("target", "Player to view balance", ArgTypes.PLAYER_REF);
     }
 
@@ -28,13 +27,13 @@ public class BalanceCommand extends AbstractAsyncCommand {
         PlayerRef target = playerArg.get(context);
 
         if (target == null) {
-            double balance = FoxEconomy.getProfileHandler().getBalance(context.sender().getUuid());
+            double balance = FoxAPIExample.getFoxAPI().getBalance(context.sender().getUuid());
             context.sendMessage(Message.raw("Your balance is $" + balance));
         } else {
 
             PlayerRef targetPlayer = playerArg.get(context);
-            if (FoxEconomy.getProfileHandler().hasProfile(targetPlayer.getUuid())) {
-                double balance = FoxEconomy.getProfileHandler().getBalance(targetPlayer.getUuid());
+            if (FoxAPIExample.getFoxAPI().hasAccount(targetPlayer.getUuid())) {
+                double balance = FoxAPIExample.getFoxAPI().getBalance(targetPlayer.getUuid());
                 context.sendMessage(Message.raw(targetPlayer.getUsername() + "'s balance is $" + balance));
             } else {
                 context.sendMessage(Message.translation("server.commands.errors.noSuchPlayer").param("username", targetPlayer.getUsername()));

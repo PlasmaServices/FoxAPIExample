@@ -1,8 +1,8 @@
 {
   "Group": "herberto",
-  "Name": "FoxEconomy",
+  "Name": "FoxAPIExample",
   "Version": "1.0.0",
-  "Description": "An economy plugin for Hytale servers.",
+  "Description": "A plugin example for the FoxAPI",
   "Authors": [
     {
       "Name": "herberto",
@@ -11,7 +11,7 @@
     }
   ],
   "Website": "https://herberto.xyz",
-  "Main": "xyz.herberto.foxEconomy.FoxEconomy",
+  "Main": "xyz.herberto.foxAPIExample.FoxAPIExample",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},

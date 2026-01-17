@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>xyz.herberto</groupId>
-    <artifactId>FoxEconomy</artifactId>
+    <artifactId>FoxAPIExample</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>FoxEconomy</name>
+    <name>FoxAPIExample</name>
 
     <properties>
         <java.version>21</java.version>
@@ -66,16 +66,17 @@
             <scope>system</scope>
         </dependency>
         <dependency>
+            <groupId>xyz.herberto.foxEconomy</groupId>
+            <artifactId>FoxEconomy</artifactId>
+            <version>1.0.0</version>
+            <systemPath>${pom.basedir}/libs/FoxEconomy.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bspfsystems</groupId>
-            <artifactId>yamlconfiguration</artifactId>
-            <version>3.0.2</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
