@@ -66,10 +66,10 @@
             <scope>system</scope>
         </dependency>
         <dependency>
-            <groupId>xyz.herberto.foxEconomy</groupId>
-            <artifactId>FoxEconomy</artifactId>
+            <groupId>xyz.herberto.foxAPI</groupId>
+            <artifactId>FoxAPI</artifactId>
             <version>1.0.0</version>
-            <systemPath>${pom.basedir}/libs/FoxEconomy.jar</systemPath>
+            <systemPath>${pom.basedir}/libs/FoxAPI-1.0.0.jar</systemPath>
             <scope>system</scope>
         </dependency>
         <dependency>

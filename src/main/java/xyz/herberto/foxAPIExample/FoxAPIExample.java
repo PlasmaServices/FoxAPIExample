@@ -1,15 +1,19 @@
 package xyz.herberto.foxAPIExample;
 
 
+import com.hypixel.hytale.server.core.HytaleServer;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import com.hypixel.hytale.server.core.universe.Universe;
 import lombok.Getter;
 import xyz.herberto.foxAPIExample.commands.CustomBalanceCommand;
-import xyz.herberto.foxEconomy.api.FoxAPI;
-import xyz.herberto.foxEconomy.api.FoxAPIProvider;
+import xyz.herberto.foxAPI.api.FoxAPI;
+import xyz.herberto.foxAPI.api.FoxAPIProvider;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
+import java.util.List;
+
 
 public final class FoxAPIExample extends JavaPlugin {
 
@@ -23,9 +27,14 @@ public final class FoxAPIExample extends JavaPlugin {
     @Override
     protected void setup() {
         instance = this;
+    }
+
+    @Override
+    protected void start() {
+        // FoxAPI MUST be registered in the start void and not the setup void for it to load correctly
 
         if(!FoxAPIProvider.isAvailable()) {
-            getLogger().atSevere().log("FoxEconomy API is not available! Shutting down...");
+            getLogger().atSevere().log("FoxAPI is not available! Shutting down...");
             return;
         }
 
@@ -37,12 +46,11 @@ public final class FoxAPIExample extends JavaPlugin {
             return;
         }
 
-        Arrays.asList(
+        List.of(
                 new CustomBalanceCommand()
         ).forEach(command -> getCommandRegistry().registerCommand(command));
 
         getLogger().atInfo().log("FoxAPIExample has been enabled! - developed by https://herberto.xyz");
-
     }
 
     @Override

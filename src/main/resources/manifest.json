@@ -14,7 +14,7 @@
   "Main": "xyz.herberto.foxAPIExample.FoxAPIExample",
   "ServerVersion": "*",
   "Dependencies": {
-    "herberto:FoxEconomy": ">=1.0.0"
+    "herberto:FoxAPI": ">=1.0.0"
   },
   "OptionalDependencies": {},
   "DisabledByDefault": false
