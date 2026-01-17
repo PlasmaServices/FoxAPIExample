@@ -4,6 +4,8 @@ package xyz.herberto.foxEconomy;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import lombok.Getter;
+import xyz.herberto.foxEconomy.api.FoxAPIImpl;
+import xyz.herberto.foxEconomy.api.FoxAPIProvider;
 import xyz.herberto.foxEconomy.commands.BalanceCommand;
 import xyz.herberto.foxEconomy.commands.PayCommand;
 import xyz.herberto.foxEconomy.commands.economy.EconomyCommands;
@@ -26,6 +28,8 @@ public final class FoxEconomy extends JavaPlugin {
         instance = this;
         profileHandler = new ProfileHandler(getDataDirectory().toFile());
 
+        FoxAPIProvider.setApi(new FoxAPIImpl(this));
+
         Arrays.asList(
                 new EconomyCommands(),
                 new BalanceCommand(),
@@ -38,6 +42,8 @@ public final class FoxEconomy extends JavaPlugin {
 
     @Override
     protected void shutdown() {
+        FoxAPIProvider.unsetApi();
+
         instance = null;
         profileHandler = null;
         getLogger().atInfo().log("FoxEconomy has been disabled!");
