@@ -13,7 +13,9 @@
   "Website": "https://herberto.xyz",
   "Main": "xyz.herberto.foxAPIExample.FoxAPIExample",
   "ServerVersion": "*",
-  "Dependencies": {},
+  "Dependencies": {
+    "herberto:FoxEconomy": ">=1.0.0"
+  },
   "OptionalDependencies": {},
   "DisabledByDefault": false
 }

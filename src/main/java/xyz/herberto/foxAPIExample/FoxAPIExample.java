@@ -24,7 +24,7 @@ public final class FoxAPIExample extends JavaPlugin {
     protected void setup() {
         instance = this;
 
-        if(FoxAPIProvider.isAvailable()) {
+        if(!FoxAPIProvider.isAvailable()) {
             getLogger().atSevere().log("FoxEconomy API is not available! Shutting down...");
             return;
         }
