@@ -37,6 +37,16 @@ public class PayCommand extends AbstractAsyncCommand {
 
         CommandSender player = context.sender();
 
+        if(amount <= 0) {
+            context.sendMessage(Message.raw("Amount must be greater than 0!"));
+            return CompletableFuture.completedFuture(null);
+        }
+
+        if(player.getUuid().equals(target.getUuid())) {
+            context.sendMessage(Message.raw("You cannot pay yourself!"));
+            return CompletableFuture.completedFuture(null);
+        }
+
         if(FoxEconomy.getProfileHandler().getBalance(player.getUuid()) < amount) {
             context.sendMessage(Message.raw("You cannot afford that!"));
             return CompletableFuture.completedFuture(null);

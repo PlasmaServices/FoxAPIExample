@@ -32,9 +32,15 @@ public final class FoxEconomy extends JavaPlugin {
                 new PayCommand()
         ).forEach(command -> getCommandRegistry().registerCommand(command));
 
-        getLogger().atInfo().log("FoxEconomy loaded - developed by https://herberto.xyz");
-        getLogger().atInfo().log("FoxEconomy has been enabled!");
+        getLogger().atInfo().log("FoxEconomy has been enabled! - developed by https://herberto.xyz");
 
+    }
+
+    @Override
+    protected void shutdown() {
+        instance = null;
+        profileHandler = null;
+        getLogger().atInfo().log("FoxEconomy has been disabled!");
     }
 
 
