@@ -1,17 +1,14 @@
 package xyz.herberto.foxAPIExample;
 
 
-import com.hypixel.hytale.server.core.HytaleServer;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-import com.hypixel.hytale.server.core.universe.Universe;
 import lombok.Getter;
 import xyz.herberto.foxAPIExample.commands.CustomBalanceCommand;
 import xyz.herberto.foxAPI.api.FoxAPI;
 import xyz.herberto.foxAPI.api.FoxAPIProvider;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.List;
 
 
